@@ -4,7 +4,7 @@ let message = document.getElementById('message');
 
 message.textContent = 'Player 1 turn';
 
-let player1 = false;
+let player1 = true;
 let player2 = false;
 let isGameOn = true;
 
@@ -24,13 +24,7 @@ function cellClicked () {
 
     let eventText = event.target.textContent;
     
-    if (player1 == false && player2 == false && eventText != 'X' && eventText!='O') {
-        event.target.textContent = 'X';
-        player2 = true;
-        message.textContent = 'Player 2 turn';
-        counter++;
-    } 
-    else if (player2 == true && eventText != 'X' && eventText!='O') {
+    if (player2 == true && eventText != 'X' && eventText!='O') {
         event.target.textContent = 'O';
         player2 = false;
         player1 = true;
@@ -48,8 +42,10 @@ function cellClicked () {
 
         checkWinner('X');
 
-        if(counter == 9) {
+        if(counter == 9 && isGameOn == true) {
             message.textContent = 'Game Draw';
+
+            isGameOn = false;
         }
     }
 
