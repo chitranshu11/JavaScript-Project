@@ -21,34 +21,34 @@ function cellClicked () {
     if(!isGameOn) { //reload game if someone wins.
         location.reload();
     }
-
-    let eventText = event.target.textContent;
+    else {
+        let eventText = event.target.textContent;
     
-    if (player2 == true && eventText != 'X' && eventText!='O') {
-        event.target.textContent = 'O';
-        player2 = false;
-        player1 = true;
-        message.textContent = 'Player 1 turn';
-        counter++;
+        if (player2 == true && eventText != 'X' && eventText!='O') {
+            event.target.textContent = 'O';
+            player2 = false;
+            player1 = true;
+            message.textContent = 'Player 1 turn';
+            counter++;
 
-        checkWinner('O');
-    }
-    else if(player1 == true && eventText != 'X' && eventText!='O') {
-        event.target.textContent = 'X';
-        player1 = false;
-        player2 = true;
-        message.textContent = 'Player 2 turn';
-        counter++;
+            checkWinner('O');
+        }
+        else if(player1 == true && eventText != 'X' && eventText!='O') {
+            event.target.textContent = 'X';
+            player1 = false;
+            player2 = true;
+            message.textContent = 'Player 2 turn';
+            counter++;
 
-        checkWinner('X');
+            checkWinner('X');
 
-        if(counter == 9 && isGameOn == true) {
-            message.textContent = 'Game Draw';
+            if(counter == 9 && isGameOn == true) {
+                message.textContent = 'Game Draw';
 
-            isGameOn = false;
+                isGameOn = false;
+            }
         }
     }
-
 }
 
 //Function to check if someone wins.
