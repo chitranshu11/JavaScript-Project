@@ -1,2 +1,2 @@
 # JavaScript-Projects
-This repository contains simple **HTML**, **CSS** & **JavaScript** based projects.
+This repository contains simple **HTML**, **CSS** & **JavaScript** based project.
